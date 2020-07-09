@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-              <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
                 <h1>Tabella Studenti</h1>
               <a href="{{route('students.create')}}" class="btn btn-primary"> Nuovo Studente</a>
               </div>
