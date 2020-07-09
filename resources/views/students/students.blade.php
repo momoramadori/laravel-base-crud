@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-              <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
+              <div class="d-flex justify-content-between align-items-center ">
                 <h1>Tabella Studenti</h1>
               <a href="{{route('students.create')}}" class="btn btn-primary"> Nuovo Studente</a>
               </div>
@@ -28,7 +28,11 @@
                             <td>{{$studente->surname}}</td>
                             <td>{{$studente->badge}}</td>
                             <td>{{$studente->email}}</td>
-                            <td class='text-right'><a class='btn btn-info' href="{{ route('students.show', ['student' => $studente->id]) }}"> Dettagli </a></td>
+                            <td class='text-right'>
+                              <a class='btn btn-info bt-small' href="{{ route('students.show', ['student' => $studente->id]) }}"> Dettagli </a>
+                              <a class='btn btn-warning bt-small' href=""> Modifica </a>
+                              <a class='btn btn-danger bt-small' href=""> Elimina </a>
+                            </td>
                           </tr>
                         @endforeach
                     </tbody>
