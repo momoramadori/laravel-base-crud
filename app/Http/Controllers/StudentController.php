@@ -38,8 +38,8 @@ class StudentController extends Controller
     {
         $data = $request->all();
         $request->validate([
-            'name'=> 'required|max:255|string',
-            'surname'=> 'required|max:255|string',
+            'name'=> 'required|max:255',
+            'surname'=> 'required|max:255',
             'badge'=> 'required|digits:3|unique:students|numeric',
             'email'=> 'required|max:255|unique:students|email',
             'description'=> 'nullable|string',
