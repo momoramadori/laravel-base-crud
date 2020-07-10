@@ -37,7 +37,13 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        //validazione
+        $request->validate([
+            'name'=> 'required|max:255|string',
+            'surname'=> 'required|max:255|string',
+            'badge'=> 'required|digits:3|unique:students|numeric',
+            'email'=> 'required|max:255|unique:students|email',
+            'description'=> 'nullable|string',
+        ]);
         $newStudent = new Student();
         $newStudent->fill($data);
         $newStudent->save();
@@ -61,9 +67,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Student $student)
     {
-        //
+        return view('students.edit', compact('student'));
     }
 
     /**
@@ -73,9 +79,18 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Student $student)
     {
-        //
+        $data = $request->all();
+        $request->validate([
+            'name'=> 'required|max:255|string',
+            'surname'=> 'required|max:255|string',
+            'badge'=> 'required|digits:3|unique:students|numeric',
+            'email'=> 'required|max:255|unique:students|email',
+            'description'=> 'nullable|string',
+        ]);
+        $student ->update($data);
+        return redirect()->route('students.index');
     }
 
     /**

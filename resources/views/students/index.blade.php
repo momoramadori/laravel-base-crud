@@ -30,7 +30,7 @@
                             <td>{{$studente->email}}</td>
                             <td class='text-right'>
                               <a class='btn btn-info bt-small' href="{{ route('students.show', ['student' => $studente->id]) }}"> Dettagli </a>
-                              <a class='btn btn-warning bt-small' href=""> Modifica </a>
+                            <a class='btn btn-warning bt-small' href="{{ route('students.edit', ['student' => $studente->id]) }}"> Modifica </a>
                               <a class='btn btn-danger bt-small' href=""> Elimina </a>
                             </td>
                           </tr>
