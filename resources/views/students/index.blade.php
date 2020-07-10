@@ -5,11 +5,11 @@
         <div class="row">
             <div class="col-12">
               <div class="d-flex justify-content-between align-items-center ">
-                <h1>Tabella Studenti</h1>
+                <h1 class='mt-3 mb-3'>Tabella Studenti</h1>
               <a href="{{route('students.create')}}" class="btn btn-primary"> Nuovo Studente</a>
               </div>
               
-                <table class="table mt-3 mb-3">
+                <table class=" table table-dark mt-3 mb-3">
                     <thead class="">
                       <tr>
                         <th scope="col">#</th>
