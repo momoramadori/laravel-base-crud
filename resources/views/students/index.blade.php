@@ -29,9 +29,13 @@
                             <td>{{$studente->badge}}</td>
                             <td>{{$studente->email}}</td>
                             <td class='text-right'>
-                              <a class='btn btn-info bt-small' href="{{ route('students.show', ['student' => $studente->id]) }}"> Dettagli </a>
+                            <a class='btn btn-info bt-small' href="{{ route('students.show', ['student' => $studente->id]) }}"> Dettagli </a>
                             <a class='btn btn-warning bt-small' href="{{ route('students.edit', ['student' => $studente->id]) }}"> Modifica </a>
-                              <a class='btn btn-danger bt-small' href=""> Elimina </a>
+                            <form class='d-inline-block' action="{{ route('students.destroy', ['student' => $studente->id]) }}" method="POST" onclick="return confirm('Are you sure?')">
+                              @method('DELETE')
+                              @csrf 
+                              <input type='submit' class='btn btn-danger bt-small' value='Elimina'>
+                            </form>
                             </td>
                           </tr>
                         @endforeach
