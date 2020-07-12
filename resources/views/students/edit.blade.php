@@ -19,7 +19,7 @@
                 <div class="form-group row">
                   <label for="nome" class="col-sm-2 col-form-label">Nome</label>
                   <div class="col-sm-10">
-                  <input type="text" class="form-control" id="nome" name="name" placeholder="Nome" value='{{old('name', $student->name)}}'>
+                  <input type="text" class="form-control" id="nome" name="name" placeholder="Nome" value='{{old('name', $student->name)}}' required>
                     @error('name')
                   <small class='text-danger'>{{$message}}</small>
                     @enderror
@@ -28,7 +28,7 @@
                 <div class="form-group row">
                   <label for="cognome" class="col-sm-2 col-form-label">Cognome</label>
                   <div class="col-sm-10">
-                    <input type="text" name="surname" class="form-control" id="cognome" placeholder="Cognome" value='{{old('surname', $student->surname)}}'>
+                    <input type="text" name="surname" class="form-control" id="cognome" placeholder="Cognome" value='{{old('surname', $student->surname)}}' required>
                     @error('surname')
                     <small class='text-danger'>{{$message}}</small>
                     @enderror
@@ -37,7 +37,7 @@
                 <div class="form-group row">
                     <label for="badge" class="col-sm-2 col-form-label">badge</label>
                   <div class="col-sm-10">
-                    <input type="text" name="badge" class="form-control" id="badge" placeholder="Badge" value='{{old('badge', $student->badge)}}'>
+                    <input type="text" name="badge" class="form-control" id="badge" placeholder="Badge" value='{{old('badge', $student->badge)}}' required>
                     @error('badge')
                     <small class='text-danger'>{{$message}}</small>
                     @enderror
@@ -46,7 +46,7 @@
                 <div class="form-group row">
                     <label for="email" class="col-sm-2 col-form-label">Email</label>
                   <div class="col-sm-10">
-                    <input type="text" name="email" class="form-control" id="email" placeholder="email@example.com" value='{{old('email', $student->email)}}'>
+                    <input type="text" name="email" class="form-control" id="email" placeholder="email@example.com" value='{{old('email', $student->email)}}' required>
                     @error('email')
                     <small class='text-danger'>{{$message}}</small>
                     @enderror

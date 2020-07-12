@@ -30218,8 +30218,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-$(document).ready(function () {
-  $('[data-toggle="confirmation"]').confirmation();
+$('.btn-submit').click(function (e) {
+  e.preventDefault();
+
+  if ($('input[name="badge"]').val().length = 6) {
+    return true;
+  } else {
+    alert('error');
+  }
 });
 
 /***/ }),
