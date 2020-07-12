@@ -40,8 +40,8 @@ class StudentController extends Controller
         $request->validate([
             'name'=> 'required|max:255',
             'surname'=> 'required|max:255',
-            'badge'=> 'required|digits:3|unique:students|numeric',
-            'email'=> 'required|max:255|unique:students|email',
+            'badge'=> 'required|digits:6|unique:students|regex:/^[0-9]+$/',
+            'email'=> 'required|max:255|unique:students|email:rfc,dns',
             'description'=> 'nullable|string',
         ]);
         $newStudent = new Student();
@@ -85,8 +85,8 @@ class StudentController extends Controller
         $request->validate([
             'name'=> 'required|max:255|string',
             'surname'=> 'required|max:255|string',
-            'badge'=> 'required|digits:3|numeric|unique:students,badge,'.$student->id,
-            'email'=> 'required|max:255|email|unique:students,email,'.$student->id,
+            'badge'=> 'required|digits:6|regex:/^[0-9]+$/|unique:students,badge,'.$student->id,
+            'email'=> 'required|max:255|email:rfc,dns|unique:students,email,'.$student->id,
             'description'=> 'nullable|string',
         ]);
         $student ->update($data);

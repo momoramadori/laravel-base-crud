@@ -17,7 +17,7 @@ class StudentsTableSeeder extends Seeder
             $newStudent = new Student();
             $newStudent->name = $faker->firstName;
             $newStudent->surname = $faker->lastName;
-            $newStudent->badge = $faker->randomNumber(3);
+            $newStudent->badge = $faker->randomNumber(6);
             $newStudent->email = $faker->email;
             $newStudent->description = $faker->sentence(10);
             $newStudent->save();

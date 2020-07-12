@@ -17,9 +17,9 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('name', 50);
             $table->string('surname',50);
-            $table->smallInteger('badge');
+            $table->string('badge',8);
             $table->string('email', 100);
-            $table->string('description',255);
+            $table->string('description',255)->nullable();
             $table->timestamps();
         });
     }
